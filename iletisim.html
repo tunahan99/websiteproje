@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - Tunahan Salih Kostak</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Vue 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">T.S. Kostak</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Hakkımda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="miras.html">Mirasımız</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="iletisim.html">İletişim</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="nav-link btn btn-outline-light px-3" href="login.html">Giriş</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="iletisim-hero text-center">
+        <div class="container">
+            <h1 class="fw-bold mb-2">İletişim</h1>
+            <p class="opacity-75">Benimle iletişime geçmek için aşağıdaki formu doldurabilirsiniz.</p>
+        </div>
+    </div>
+
+    <!-- Form Bölümü -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+
+                    <!-- Hata / Başarı mesajları -->
+                    <div id="hata-mesaji" class="hata-mesaji"></div>
+                    <div id="basari-mesaji" class="basari-mesaji"></div>
+
+                    <div id="iletisim-app">
+                        <!-- Vue hata mesajları -->
+                        <div v-if="vueHatalar.length > 0" class="alert alert-danger">
+                            <ul class="mb-0 ps-3">
+                                <li v-for="hata in vueHatalar" :key="hata">{{ hata }}</li>
+                            </ul>
+                        </div>
+                        <div v-if="vueBasarili" class="alert alert-success">
+                            <i class="bi bi-check-circle me-2"></i>
+                            Vue.js doğrulama başarılı! Form gönderildi.
+                        </div>
+                    </div>
+
+                    <div class="form-kart">
+                        <h4 class="mb-4 fw-bold">Mesaj Gönder</h4>
+
+                        <form id="iletisim-form" action="websiteprj.php" method="POST" novalidate>
+
+                            <div class="row g-3">
+
+                                <!-- Ad Soyad -->
+                                <div class="col-md-6">
+                                    <label for="ad_soyad" class="form-label">Ad Soyad <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="ad_soyad" name="ad_soyad"
+                                        placeholder="Adınız ve soyadınız">
+                                </div>
+
+                                <!-- E-posta -->
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">E-posta <span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        placeholder="ornek@mail.com">
+                                </div>
+
+                                <!-- Telefon -->
+                                <div class="col-md-6">
+                                    <label for="telefon" class="form-label">Telefon</label>
+                                    <input type="tel" class="form-control" id="telefon" name="telefon"
+                                        placeholder="05XX XXX XX XX">
+                                </div>
+
+                                <!-- Konu -->
+                                <div class="col-md-6">
+                                    <label for="konu" class="form-label">Konu <span class="text-danger">*</span></label>
+                                    <select class="form-select" id="konu" name="konu">
+                                        <option value="">-- Konu seçiniz --</option>
+                                        <option value="genel">Genel Bilgi</option>
+                                        <option value="is">İş Birliği</option>
+                                        <option value="proje">Proje Teklifi</option>
+                                        <option value="diger">Diğer</option>
+                                    </select>
+                                </div>
+
+                                <!-- Doğum Tarihi -->
+                                <div class="col-md-6">
+                                    <label for="dogum_tarihi" class="form-label">Doğum Tarihi</label>
+                                    <input type="date" class="form-control" id="dogum_tarihi" name="dogum_tarihi">
+                                </div>
+
+                                <!-- Cinsiyet -->
+                                <div class="col-md-6">
+                                    <label class="form-label d-block">Cinsiyet</label>
+                                    <div class="d-flex gap-4 mt-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="cinsiyet"
+                                                id="erkek" value="erkek">
+                                            <label class="form-check-label" for="erkek">Erkek</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="cinsiyet"
+                                                id="kadin" value="kadin">
+                                            <label class="form-check-label" for="kadin">Kadın</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="cinsiyet"
+                                                id="belirtmek-istemiyorum" value="belirtmek_istemiyorum">
+                                            <label class="form-check-label" for="belirtmek-istemiyorum">Belirtmek istemiyorum</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- İlgi Alanları (checkbox) -->
+                                <div class="col-12">
+                                    <label class="form-label d-block">İlgi Alanlarınız</label>
+                                    <div class="d-flex flex-wrap gap-3 mt-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="ilgi[]"
+                                                id="il-yazilim" value="yazilim">
+                                            <label class="form-check-label" for="il-yazilim">Yazılım</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="ilgi[]"
+                                                id="il-tasarim" value="tasarim">
+                                            <label class="form-check-label" for="il-tasarim">Tasarım</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="ilgi[]"
+                                                id="il-yapay-zeka" value="yapay_zeka">
+                                            <label class="form-check-label" for="il-yapay-zeka">Yapay Zeka</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="ilgi[]"
+                                                id="il-mobil" value="mobil">
+                                            <label class="form-check-label" for="il-mobil">Mobil Geliştirme</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="ilgi[]"
+                                                id="il-oyun" value="oyun">
+                                            <label class="form-check-label" for="il-oyun">Oyun Geliştirme</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Mesaj -->
+                                <div class="col-12">
+                                    <label for="mesaj" class="form-label">Mesajınız <span class="text-danger">*</span></label>
+                                    <textarea class="form-control" id="mesaj" name="mesaj" rows="5"
+                                        placeholder="Mesajınızı buraya yazınız..."></textarea>
+                                </div>
+
+                                <!-- Dosya Yükleme -->
+                                <div class="col-12">
+                                    <label for="dosya" class="form-label">Dosya Ekle (isteğe bağlı)</label>
+                                    <input type="file" class="form-control" id="dosya" name="dosya">
+                                    <div class="form-text">PDF, Word veya görsel dosyaları kabul edilir. Maks. 5 MB.</div>
+                                </div>
+
+                                <!-- Aralık (range) -->
+                                <div class="col-12">
+                                    <label for="oncelik" class="form-label">
+                                        Mesaj Önceliği: <span id="oncelik-deger" class="fw-bold text-primary">5</span>
+                                    </label>
+                                    <input type="range" class="form-range" id="oncelik" name="oncelik"
+                                        min="1" max="10" value="5"
+                                        oninput="document.getElementById('oncelik-deger').textContent = this.value">
+                                    <div class="d-flex justify-content-between">
+                                        <small class="text-muted">Düşük (1)</small>
+                                        <small class="text-muted">Yüksek (10)</small>
+                                    </div>
+                                </div>
+
+                                <!-- KVKK Onayı -->
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="kvkk" name="kvkk" value="1">
+                                        <label class="form-check-label" for="kvkk">
+                                            <span class="text-danger">*</span>
+                                            Kişisel verilerimin işlenmesine ilişkin aydınlatma metnini okudum ve kabul ediyorum.
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Butonlar -->
+                                <div class="col-12 d-flex flex-wrap gap-3 mt-2">
+                                    <button type="button" id="js-kontrol-btn" class="btn btn-outline-primary px-4">
+                                        <i class="bi bi-check-circle me-2"></i>JavaScript ile Kontrol Et
+                                    </button>
+                                    <button type="button" id="vue-kontrol-btn" class="btn btn-outline-success px-4">
+                                        <i class="bi bi-check2-all me-2"></i>Vue.js ile Kontrol Et
+                                    </button>
+                                    <button type="submit" id="gonder-btn" class="btn btn-primary px-4">
+                                        <i class="bi bi-send me-2"></i>Gönder
+                                    </button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black text-white text-center py-3">
+        <small>&copy; 2025 Tunahan Salih Kostak &mdash; b251210385 &mdash; Sakarya Üniversitesi</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/validate.js"></script>
+</body>
+</html>

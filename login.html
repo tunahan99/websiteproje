@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş - Tunahan Salih Kostak</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="login-section">
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <div class="login-kart">
+
+                    <!-- Logo / Başlık -->
+                    <div class="text-center mb-4">
+                        <div class="login-logo">T.S.K</div>
+                        <h4 class="fw-bold mb-1">Sisteme Giriş</h4>
+                        <p class="text-muted small">Öğrenci bilgilerinizle giriş yapın</p>
+                    </div>
+
+                    <!-- Hata mesajı (URL parametresinden JS ile gösterilir) -->
+                    <div id="sunucu-hata" class="alert alert-danger alert-dismissible fade show d-none" role="alert">
+                        <i class="bi bi-exclamation-circle me-2"></i>
+                        <span id="sunucu-hata-metin"></span>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+
+                    <!-- JS form doğrulama hata mesajı -->
+                    <div id="js-hata" class="hata-mesaji"></div>
+
+                    <!-- Login Formu -->
+                    <form id="login-form" action="login_islem.php" method="POST" novalidate>
+                        <div class="mb-3">
+                            <label for="kullanici_adi" class="form-label fw-medium">
+                                <i class="bi bi-person me-1"></i>Kullanıcı Adı (E-posta)
+                            </label>
+                            <input type="email" class="form-control" id="kullanici_adi"
+                                name="kullanici_adi"
+                                placeholder="b251210385@sakarya.edu.tr"
+                                autocomplete="username">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="sifre" class="form-label fw-medium">
+                                <i class="bi bi-lock me-1"></i>Şifre
+                            </label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="sifre"
+                                    name="sifre"
+                                    placeholder="Öğrenci numaranız"
+                                    autocomplete="current-password">
+                                <button class="btn btn-outline-secondary" type="button" id="sifre-goster"
+                                    title="Şifreyi göster/gizle">
+                                    <i class="bi bi-eye" id="sifre-icon"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="bi bi-box-arrow-in-right me-2"></i>Giriş Yap
+                            </button>
+                        </div>
+                    </form>
+
+                    <hr class="my-4">
+                    <div class="text-center">
+                        <a href="index.html" class="text-muted small">
+                            <i class="bi bi-arrow-left me-1"></i>Ana sayfaya dön
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>
