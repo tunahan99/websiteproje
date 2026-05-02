@@ -35,114 +35,164 @@
     <!-- CV Başlık -->
     <header class="cv-baslik-bar">
         <div class="container">
-            <div class="row align-items-center g-3">
+            <div class="row align-items-center g-4">
                 <div class="col-auto">
                     <div class="rounded-circle bg-white d-flex align-items-center justify-content-center"
-                        style="width:80px;height:80px;">
-                        <span class="fw-bold text-primary fs-4">TSK</span>
+                        style="width:85px; height:85px; flex-shrink:0;">
+                        <span class="fw-bold text-primary" style="font-size:1.4rem;">TSK</span>
                     </div>
                 </div>
                 <div class="col">
-                    <h1 class="h2 mb-1">Tunahan Salih Kostak</h1>
-                    <p class="mb-0 opacity-75">Bilgisayar Mühendisliği Öğrencisi</p>
-                    <p class="mb-0 opacity-75 small">
-                        <i class="bi bi-envelope me-1"></i>b251210385@sakarya.edu.tr
-                        &nbsp;&nbsp;
-                        <i class="bi bi-geo-alt me-1"></i>Konya / Türkiye
-                    </p>
+                    <h1 class="h2 fw-bold mb-1">Tunahan Salih Kostak</h1>
+                    <p class="mb-1 opacity-75 fw-medium">Bilgisayar Mühendisliği Öğrencisi</p>
+                    <div class="d-flex flex-wrap gap-3 opacity-75 small">
+                        <span><i class="bi bi-envelope me-1"></i>b251210385@sakarya.edu.tr</span>
+                        <span><i class="bi bi-geo-alt me-1"></i>Konya / Türkiye</span>
+                        <span><i class="bi bi-mortarboard me-1"></i>Sakarya Üniversitesi</span>
+                    </div>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <a href="#" class="btn btn-light btn-sm px-3" onclick="window.print(); return false;">
+                        <i class="bi bi-printer me-1"></i>Yazdır
+                    </a>
                 </div>
             </div>
         </div>
     </header>
 
     <main>
+
+        <!-- Hakkımda Özeti -->
+        <section class="cv-bolum" aria-labelledby="ozet-baslik">
+            <div class="container">
+                <h2 id="ozet-baslik" class="bolum-baslik">
+                    <i class="bi bi-person-lines-fill me-2 text-primary"></i>Özet
+                </h2>
+                <p class="text-secondary" style="max-width:700px;">
+                    Sakarya Üniversitesi Bilgisayar Mühendisliği bölümünde öğrenim görmekteyim.
+                    Web geliştirme, yazılım tasarımı ve yeni teknolojilere ilgi duyuyorum.
+                    Takım çalışmasına yatkın, öğrenmeye açık ve problem çözme odaklı bir yaklaşımla
+                    projeler geliştirmeyi hedefliyorum.
+                </p>
+            </div>
+        </section>
+
         <!-- Eğitim Bilgileri -->
-        <section class="cv-bolum" aria-labelledby="egitim-baslik">
+        <section class="cv-bolum bg-light" aria-labelledby="egitim-baslik">
             <div class="container">
                 <h2 id="egitim-baslik" class="bolum-baslik">
                     <i class="bi bi-mortarboard me-2 text-primary"></i>Eğitim
                 </h2>
+
                 <article class="zaman-item">
-                    <span class="yil-badge">2025 - Devam Ediyor</span>
-                    <h5 class="mb-1">Bilgisayar Mühendisliği — Lisans</h5>
-                    <p class="text-muted mb-1">Sakarya Üniversitesi, Mühendislik Fakültesi</p>
-                    <p class="text-secondary small mb-0">
-                        Web teknolojileri, veri yapıları, algoritmalar ve yazılım mühendisliği alanlarında eğitim almaktayım.
+                    <span class="yil-badge">2025 — Devam Ediyor</span>
+                    <h5 class="mb-1 mt-1">Bilgisayar Mühendisliği — Lisans</h5>
+                    <p class="text-primary fw-medium mb-1 small">Sakarya Üniversitesi, Mühendislik Fakültesi</p>
+                    <p class="text-secondary small mb-1">
+                        Web teknolojileri, veri yapıları ve algoritmalar, nesne yönelimli programlama,
+                        veritabanı yönetim sistemleri, yazılım mühendisliği ilkeleri konularında eğitim almaktayım.
                     </p>
+                    <div class="d-flex flex-wrap gap-2 mt-2">
+                        <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25">Web Teknolojileri</span>
+                        <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25">Algoritmalar</span>
+                        <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25">OOP</span>
+                        <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25">Veritabanı</span>
+                    </div>
                 </article>
+
                 <article class="zaman-item">
-                    <span class="yil-badge">2021 - 2025</span>
-                    <h5 class="mb-1">Lise Eğitimi</h5>
-                    <p class="text-muted mb-1">Konya &mdash; Anadolu Lisesi</p>
+                    <span class="yil-badge">2021 — 2025</span>
+                    <h5 class="mb-1 mt-1">Lise — Sayısal Bölüm</h5>
+                    <p class="text-primary fw-medium mb-1 small">Anadolu Lisesi, Konya</p>
                     <p class="text-secondary small mb-0">
-                        Sayısal bölümde mezun oldum.
+                        Matematik ve fen bilimleri ağırlıklı müfredatla lisans eğitimime temel hazırladım.
                     </p>
                 </article>
             </div>
         </section>
 
         <!-- Teknik Beceriler -->
-        <section class="cv-bolum bg-light" aria-labelledby="beceri-baslik">
+        <section class="cv-bolum" aria-labelledby="beceri-baslik">
             <div class="container">
                 <h2 id="beceri-baslik" class="bolum-baslik">
                     <i class="bi bi-tools me-2 text-primary"></i>Teknik Beceriler
                 </h2>
-                <div class="row g-3">
+                <div class="row g-4">
                     <div class="col-md-6">
+                        <h6 class="fw-semibold text-muted mb-3 text-uppercase" style="font-size:.78rem; letter-spacing:1px;">Frontend</h6>
                         <div class="mb-3">
                             <div class="d-flex justify-content-between mb-1">
-                                <span class="fw-medium">HTML5 / CSS3</span>
+                                <span class="fw-medium small">HTML5 / CSS3</span>
                                 <span class="text-muted small">İyi</span>
                             </div>
-                            <div class="progress" style="height:8px;">
+                            <div class="progress" style="height:7px;">
                                 <div class="progress-bar" style="width:75%"></div>
                             </div>
                         </div>
                         <div class="mb-3">
                             <div class="d-flex justify-content-between mb-1">
-                                <span class="fw-medium">JavaScript</span>
+                                <span class="fw-medium small">Bootstrap 5</span>
+                                <span class="text-muted small">İyi</span>
+                            </div>
+                            <div class="progress" style="height:7px;">
+                                <div class="progress-bar" style="width:70%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="fw-medium small">JavaScript</span>
                                 <span class="text-muted small">Orta</span>
                             </div>
-                            <div class="progress" style="height:8px;">
+                            <div class="progress" style="height:7px;">
                                 <div class="progress-bar" style="width:60%"></div>
                             </div>
                         </div>
                         <div class="mb-3">
                             <div class="d-flex justify-content-between mb-1">
-                                <span class="fw-medium">PHP</span>
+                                <span class="fw-medium small">Vue.js</span>
                                 <span class="text-muted small">Başlangıç</span>
                             </div>
-                            <div class="progress" style="height:8px;">
-                                <div class="progress-bar" style="width:40%"></div>
+                            <div class="progress" style="height:7px;">
+                                <div class="progress-bar" style="width:35%"></div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
+                        <h6 class="fw-semibold text-muted mb-3 text-uppercase" style="font-size:.78rem; letter-spacing:1px;">Backend &amp; Diğer</h6>
                         <div class="mb-3">
                             <div class="d-flex justify-content-between mb-1">
-                                <span class="fw-medium">Bootstrap</span>
-                                <span class="text-muted small">İyi</span>
+                                <span class="fw-medium small">PHP</span>
+                                <span class="text-muted small">Başlangıç</span>
                             </div>
-                            <div class="progress" style="height:8px;">
-                                <div class="progress-bar bg-success" style="width:70%"></div>
+                            <div class="progress" style="height:7px;">
+                                <div class="progress-bar bg-success" style="width:40%"></div>
                             </div>
                         </div>
                         <div class="mb-3">
                             <div class="d-flex justify-content-between mb-1">
-                                <span class="fw-medium">Python</span>
+                                <span class="fw-medium small">Python</span>
                                 <span class="text-muted small">Orta</span>
                             </div>
-                            <div class="progress" style="height:8px;">
+                            <div class="progress" style="height:7px;">
                                 <div class="progress-bar bg-success" style="width:55%"></div>
                             </div>
                         </div>
                         <div class="mb-3">
                             <div class="d-flex justify-content-between mb-1">
-                                <span class="fw-medium">Git / GitHub</span>
+                                <span class="fw-medium small">Git / GitHub</span>
                                 <span class="text-muted small">Orta</span>
                             </div>
-                            <div class="progress" style="height:8px;">
+                            <div class="progress" style="height:7px;">
                                 <div class="progress-bar bg-success" style="width:55%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="fw-medium small">C / C++</span>
+                                <span class="text-muted small">Orta</span>
+                            </div>
+                            <div class="progress" style="height:7px;">
+                                <div class="progress-bar bg-success" style="width:50%"></div>
                             </div>
                         </div>
                     </div>
@@ -151,19 +201,48 @@
         </section>
 
         <!-- Projeler -->
-        <section class="cv-bolum" aria-labelledby="proje-baslik">
+        <section class="cv-bolum bg-light" aria-labelledby="proje-baslik">
             <div class="container">
                 <h2 id="proje-baslik" class="bolum-baslik">
                     <i class="bi bi-folder2-open me-2 text-primary"></i>Projeler
                 </h2>
+
                 <article class="zaman-item">
                     <span class="yil-badge">2025</span>
-                    <h5 class="mb-1">Kişisel Web Sitesi</h5>
-                    <p class="text-muted mb-1">HTML5, CSS3, Bootstrap 5, JavaScript, PHP</p>
-                    <p class="text-secondary small mb-0">
-                        Web Teknolojileri dersi kapsamında geliştirilen kişisel tanıtım ve portföy sitesi.
-                        Responsive tasarım, API entegrasyonu ve PHP backend içermektedir.
+                    <h5 class="mb-1 mt-1">Kişisel Web Sitesi</h5>
+                    <p class="text-muted small mb-1">
+                        <span class="badge bg-secondary me-1">HTML5</span>
+                        <span class="badge bg-secondary me-1">CSS3</span>
+                        <span class="badge bg-secondary me-1">Bootstrap 5</span>
+                        <span class="badge bg-secondary me-1">JavaScript</span>
+                        <span class="badge bg-secondary me-1">Vue.js</span>
+                        <span class="badge bg-secondary">PHP</span>
                     </p>
+                    <p class="text-secondary small mb-0">
+                        Web Teknolojileri dersi kapsamında geliştirilen çok sayfalı kişisel portföy sitesi.
+                        Responsive tasarım, TMDB API entegrasyonu, PHP form işleme ve güvenli login sistemi içermektedir.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sertifikalar -->
+        <section class="cv-bolum" aria-labelledby="sertifika-baslik">
+            <div class="container">
+                <h2 id="sertifika-baslik" class="bolum-baslik">
+                    <i class="bi bi-award me-2 text-primary"></i>Sertifikalar
+                </h2>
+
+                <article class="zaman-item">
+                    <span class="yil-badge">2024</span>
+                    <h5 class="mb-1 mt-1">Python ile Programlamaya Giriş</h5>
+                    <p class="text-muted small mb-0">Udemy &mdash; Çevrimiçi kurs sertifikası</p>
+                </article>
+
+                <article class="zaman-item">
+                    <span class="yil-badge">2024</span>
+                    <h5 class="mb-1 mt-1">Web Tasarım Temelleri (HTML &amp; CSS)</h5>
+                    <p class="text-muted small mb-0">BTK Akademi &mdash; Çevrimiçi kurs sertifikası</p>
                 </article>
             </div>
         </section>
@@ -190,6 +269,33 @@
                 </div>
             </div>
         </section>
+
+        <!-- Hobiler -->
+        <section class="cv-bolum" aria-labelledby="hobi-baslik">
+            <div class="container">
+                <h2 id="hobi-baslik" class="bolum-baslik">
+                    <i class="bi bi-stars me-2 text-primary"></i>Hobiler &amp; İlgi Alanları
+                </h2>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge rounded-pill bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 px-3 py-2">
+                        <i class="bi bi-laptop me-1"></i>Yazılım Geliştirme
+                    </span>
+                    <span class="badge rounded-pill bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 px-3 py-2">
+                        <i class="bi bi-controller me-1"></i>Video Oyunları
+                    </span>
+                    <span class="badge rounded-pill bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 px-3 py-2">
+                        <i class="bi bi-music-note-beamed me-1"></i>Müzik
+                    </span>
+                    <span class="badge rounded-pill bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 px-3 py-2">
+                        <i class="bi bi-bicycle me-1"></i>Spor
+                    </span>
+                    <span class="badge rounded-pill bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 px-3 py-2">
+                        <i class="bi bi-book me-1"></i>Teknoloji İçerikleri
+                    </span>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer class="bg-black text-white text-center py-3">
