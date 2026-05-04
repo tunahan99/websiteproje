@@ -437,3 +437,90 @@ footer {
         padding: 40px 0;
     }
 }
+
+/* ================================================
+   Tasarım İyileştirmeleri
+   ================================================ */
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ---- Navbar Scroll Efekti ---- */
+.navbar {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-scrolled {
+    background-color: rgba(20, 22, 26, 0.96) !important;
+    box-shadow: 0 3px 24px rgba(0, 0, 0, 0.4) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* ---- Scroll-to-top Butonu ---- */
+#scroll-top {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--ana-renk);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+    box-shadow: 0 4px 18px rgba(13, 110, 253, 0.45);
+    transition: background-color 0.2s, transform 0.2s, opacity 0.2s;
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+#scroll-top:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-3px);
+}
+
+/* ---- Kart Giriş Animasyonları ---- */
+.animasyon-hazir {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.animasyon-aktif {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---- Nav Link Alt Çizgi Efekti ---- */
+.navbar-nav .nav-link:not(.btn) {
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.navbar-nav .nav-link:not(.btn)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--ana-renk);
+    transition: width 0.25s ease;
+}
+
+.navbar-nav .nav-link:not(.btn):hover::after,
+.navbar-nav .nav-link.active:not(.btn)::after {
+    width: 100%;
+}
+
+/* ---- Bölüm Geçişleri ---- */
+section {
+    transition: background-color 0.3s ease;
+}
