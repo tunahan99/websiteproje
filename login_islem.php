@@ -49,7 +49,7 @@ if ($kullaniciAdi === $gecerli_email && $sifre === $gecerli_sifre) {
                     <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
                     <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
                     <li class="nav-item ms-lg-2">
-                        <a class="nav-link btn btn-outline-danger px-3" href="cikis.php">Çıkış</a>
+                        <a class="nav-link btn btn-outline-danger px-3" href="cikis.php">Çıkış Yap</a>
                     </li>
                 </ul>
             </div>
@@ -79,6 +79,7 @@ if ($kullaniciAdi === $gecerli_email && $sifre === $gecerli_sifre) {
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
     <?php
