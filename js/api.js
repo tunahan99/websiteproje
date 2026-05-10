@@ -18,6 +18,13 @@ async function filmiGetir(imdbId) {
     return veri;
 }
 
+function turBadgeleri(genreStr) {
+    if (!genreStr || genreStr === 'N/A') return '';
+    return genreStr.split(',').slice(0, 3).map(function(tur) {
+        return '<span class="api-tur-badge">' + tur.trim() + '</span>';
+    }).join(' ');
+}
+
 function kartOlustur(film) {
     const puan   = film.imdbRating !== 'N/A' ? film.imdbRating : '—';
     const sure   = film.Runtime    !== 'N/A' ? film.Runtime    : '';
@@ -27,17 +34,23 @@ function kartOlustur(film) {
     div.className = 'col-sm-6 col-lg-4';
     div.innerHTML =
         '<div class="api-kart">' +
-            (poster
-                ? '<img src="' + poster + '" alt="' + film.Title + '" class="api-poster">'
-                : '<div class="api-poster-placeholder"><i class="bi bi-film"></i></div>'
-            ) +
+            '<div class="api-poster-wrapper">' +
+                (poster
+                    ? '<img src="' + poster + '" alt="' + film.Title + '" class="api-poster">'
+                    : '<div class="api-poster-placeholder"><i class="bi bi-film"></i></div>'
+                ) +
+                '<div class="api-poster-overlay">' +
+                    '<p class="api-poster-baslik">' + film.Title + '</p>' +
+                '</div>' +
+            '</div>' +
             '<div class="api-kart-body">' +
-                '<h6 class="fw-semibold mb-1">' + film.Title + '</h6>' +
+                '<h6 class="fw-semibold mb-2">' + film.Title + '</h6>' +
                 '<div class="d-flex align-items-center flex-wrap gap-2 mb-2">' +
                     '<span class="puan-badge"><i class="bi bi-star-fill me-1"></i>' + puan + '</span>' +
                     '<span class="text-muted small">' + film.Year + '</span>' +
                     (sure ? '<span class="text-muted small">' + sure + '</span>' : '') +
                 '</div>' +
+                '<div class="d-flex flex-wrap gap-1 mb-2">' + turBadgeleri(film.Genre) + '</div>' +
                 '<p class="text-muted small mb-1"><strong>Yönetmen:</strong> ' + film.Director + '</p>' +
                 '<p class="text-muted small mb-0" style="display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;">' +
                     film.Plot +

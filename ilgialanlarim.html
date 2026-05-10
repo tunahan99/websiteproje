@@ -33,10 +33,11 @@
     </nav>
 
     <!-- Hero -->
-    <div style="background: linear-gradient(135deg, #141e30, #243b55); padding: 70px 0;" class="text-white text-center">
-        <div class="container">
-            <h1 class="fw-bold mb-2">Favori Filmlerim</h1>
-            <p class="text-white-50">OMDb API üzerinden çekilen film bilgileri</p>
+    <div class="api-hero text-white text-center">
+        <div class="container" style="position:relative; z-index:1;">
+            <i class="bi bi-camera-reels" style="font-size:3rem; opacity:0.6;"></i>
+            <h1 class="fw-bold mt-3 mb-2">Favori Filmlerim</h1>
+            <p class="text-white-50 mb-0">İzlediğim ve beğendiğim filmler — OMDb API ile çekiliyor</p>
         </div>
     </div>
 
@@ -56,8 +57,7 @@
                 Filmler yüklenirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.
             </div>
 
-            <!-- Film kartları buraya gelecek -->
-            <div id="film-listesi" class="row g-4 d-none"></div>
+            <div id="film-listesi" class="row g-4 justify-content-center d-none"></div>
         </div>
     </section>
 
