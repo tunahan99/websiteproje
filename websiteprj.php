@@ -145,6 +145,7 @@ if (isset($_FILES['dosya']) && $_FILES['dosya']['error'] !== UPLOAD_ERR_NO_FILE)
                             <i class="bi bi-list-ul me-2"></i>Gönderilen Veriler
                         </div>
                         <div class="card-body p-0">
+                            <div class="table-responsive">
                             <table class="table table-bordered table-hover mb-0">
                                 <tbody>
                                     <tr>
@@ -254,6 +255,7 @@ if (isset($_FILES['dosya']) && $_FILES['dosya']['error'] !== UPLOAD_ERR_NO_FILE)
                                     </tr>
                                 </tbody>
                             </table>
+                            </div>
                         </div>
                     </div>
 

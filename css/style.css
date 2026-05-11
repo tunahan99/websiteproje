@@ -454,6 +454,16 @@ footer {
     display: none;
 }
 
+/* ---- Ortalanmış bölüm başlığı ---- */
+.bolum-baslik-merkez {
+    text-align: center;
+}
+
+.bolum-baslik-merkez::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 991px) {
     .hero-section {
@@ -482,7 +492,11 @@ footer {
     }
 
     .sehir-hero {
-        height: 280px;
+        height: 260px;
+    }
+
+    .sehir-slider .carousel-item img {
+        height: 260px;
     }
 
     .form-kart {
@@ -495,6 +509,38 @@ footer {
 
     .cv-baslik-bar {
         padding: 40px 0;
+    }
+
+    .api-poster {
+        height: 220px;
+    }
+
+    .api-poster-placeholder {
+        height: 220px;
+    }
+
+    .api-hero {
+        padding: 50px 0 35px;
+    }
+
+    .video-placeholder {
+        height: 200px;
+    }
+
+    .medya-cerceve img {
+        height: 200px;
+    }
+
+    .iletisim-hero {
+        padding: 50px 0;
+    }
+
+    .sehir-hero {
+        height: 240px;
+    }
+
+    blockquote {
+        padding: 16px !important;
     }
 }
 
