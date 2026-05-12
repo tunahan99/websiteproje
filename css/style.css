@@ -630,3 +630,70 @@ html {
 section {
     transition: background-color 0.3s ease;
 }
+
+/* ---- Buton İyileştirmeleri ---- */
+.btn-primary {
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    border: none;
+    box-shadow: 0 4px 14px rgba(13, 110, 253, 0.35);
+    transition: all 0.25s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background: linear-gradient(135deg, #0b5ed7, #5a0fc8);
+    border: none;
+    box-shadow: 0 6px 20px rgba(13, 110, 253, 0.5);
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-outline-primary {
+    transition: all 0.25s ease;
+}
+
+.btn-outline-primary:hover {
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    border-color: transparent;
+    box-shadow: 0 4px 14px rgba(13, 110, 253, 0.35);
+    transform: translateY(-2px);
+}
+
+.btn-outline-light {
+    transition: all 0.25s ease;
+}
+
+.btn-outline-light:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(255, 255, 255, 0.2);
+}
+
+/* ---- Kart Aksent Çizgisi ---- */
+.hobi-kart {
+    border-top: 3px solid var(--ana-renk);
+}
+
+.istatistik-kart {
+    border-top: 3px solid transparent;
+    transition: var(--gecis), border-top-color 0.25s ease;
+}
+
+.istatistik-kart:hover {
+    border-top-color: var(--ana-renk);
+}
+
+.card.shadow-sm,
+.card.border-0.shadow-sm {
+    border-top: 3px solid transparent !important;
+    transition: border-top-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.card.shadow-sm:hover,
+.card.border-0.shadow-sm:hover {
+    border-top-color: var(--ana-renk) !important;
+    box-shadow: var(--kart-golge-hover) !important;
+    transform: translateY(-4px);
+}
