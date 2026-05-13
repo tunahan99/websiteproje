@@ -417,6 +417,44 @@ body {
     background: radial-gradient(ellipse at 70% 50%, rgba(13,110,253,0.1) 0%, transparent 60%);
 }
 
+/* ---- Mevlana Sözleri Blockquote ---- */
+.mevlana-soz {
+    background: rgba(255, 255, 255, 0.06);
+    border-left: 4px solid var(--ana-renk);
+    border-radius: 0 10px 10px 0;
+    padding: 24px 22px 20px 24px;
+    margin: 0;
+    position: relative;
+    transition: var(--gecis);
+    height: 100%;
+}
+
+.mevlana-soz::before {
+    content: '\201C';
+    position: absolute;
+    top: -6px;
+    left: 16px;
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--ana-renk);
+    opacity: 0.5;
+    font-family: Georgia, serif;
+}
+
+.mevlana-soz p {
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #e9ecef;
+    margin: 0;
+    padding-top: 18px;
+}
+
+.mevlana-soz:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-4px);
+}
+
 /* ---- Yakında Sayfası (Placeholder) ---- */
 .yaklasinda {
     min-height: 60vh;
